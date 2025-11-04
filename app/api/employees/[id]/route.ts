@@ -31,6 +31,6 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
 
 
 export async function DELETE(_req: Request, { params }: { params: Promise<{ id: string }> }) {
-  await prisma.employee.delete({ where: { id: Number(params.id) } });
+  await prisma.employee.delete({ where: { id: Number((await params).id) } });
   return NextResponse.json({ message: "Deleted successfully" });
 }
