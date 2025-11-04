@@ -4,7 +4,7 @@ import { prisma } from "@/app/lib/prisma";
 // GET one department
 export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
-    const id = parseInt(params.id, 10);
+    const id = parseInt((await params).id, 10);
     const department = await prisma.department.findUnique({
       where: { id },
       include: { employees: true },
