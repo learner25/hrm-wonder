@@ -17,7 +17,7 @@ export default async function UpdateAttendanceModal({ params }: { params: Promis
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center">
       <div className="bg-white p-6 rounded shadow w-[400px]">
         <h2 className="text-xl font-semibold mb-4 text-gray-700">{attendance ? "Edit" : "Add"} Attendance</h2>
-        <AttendanceForm attendance={attendance} employees={employees} />
+        <AttendanceForm attendance={attendance ?? undefined} employees={employees} />
       </div>
     </div>
   );
