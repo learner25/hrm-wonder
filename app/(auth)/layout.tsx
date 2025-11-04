@@ -32,7 +32,7 @@ export default function AuthLayout({
       >
          {children}
       </body>
-      {console.log("auth layout loaded!")}
+      
     </html>
   );
 }
