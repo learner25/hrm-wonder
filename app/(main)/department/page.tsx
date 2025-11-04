@@ -73,7 +73,7 @@ export default function DepartmentsPage() {
               <td className="p-3 flex gap-3">
                 <Link
                   href={`/department/(.)update/${d.id}`}
-                  state={{ onUpdate: updateDepartment }}
+                  
                   className="text-blue-600 underline"
                 >
                   Edit
