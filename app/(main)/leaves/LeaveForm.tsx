@@ -145,21 +145,22 @@ export default function LeaveForm({ leave, employees }: LeaveFormProps) {
         </select>
       </label>
 
-      <label className="block">
-        <span className="text-sm font-medium">Employee</span>
-        <select
-          name="employeeId"
-          value={form.employeeId}
-          onChange={handleChange}
-          className="w-full border p-2 rounded mt-1"
-        >
-          {employees.map((emp) => (
-            <option key={emp.id} value={emp.id}>
-              {emp.name}
-            </option>
-          ))}
-        </select>
-      </label>
+     <label className="block">
+  <span className="text-sm font-medium">Employee</span>
+  <select
+    name="employeeId"
+    value={form.employeeId}
+    onChange={handleChange}
+    className="w-full border p-2 rounded mt-1"
+  >
+    {employees.map((emp) => (
+      <option key={emp.id} value={emp.id}>
+        {emp.name}
+      </option>
+    ))}
+  </select>
+</label>
+
 
       <div className="flex gap-3 justify-end mt-2">
         <button
