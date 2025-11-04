@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { signIn, signInSocial, signUp } from "../lib/actions/auth-action";
+import { signIn, signInSocial, signUp } from "../../lib/actions/auth-action";
 
 export default function AuthClientPage() {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -58,6 +58,7 @@ export default function AuthClientPage() {
       );
     } finally {
       setIsLoading(false);
+      router.push('/')
     }
   };
 

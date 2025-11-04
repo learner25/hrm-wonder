@@ -1,0 +1,12 @@
+model Employee {
+  id           Int       @id @default(autoincrement())
+  name         String
+  email        String    @unique
+  position     String
+  department   Department @relation(fields: [departmentId], references: [id])
+  departmentId Int
+  salary       Float
+  attendance   Attendance[]
+  leaves       Leave[]
+  createdAt    DateTime  @default(now())
+}

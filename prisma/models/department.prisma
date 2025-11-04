@@ -1,0 +1,5 @@
+model Department {
+  id        Int         @id @default(autoincrement())
+  name      String
+  employees Employee[]
+}

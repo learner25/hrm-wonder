@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { signOut } from "./lib/actions/auth-action";
+import { signOut } from "@/app/lib/actions/auth-action";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,6 +11,8 @@ type Session = {
     email: string;
   };
 };
+
+
 
 type Post = {
   id: number;               
@@ -31,19 +33,9 @@ export default function HomePageClient({
   const router = useRouter();
   const [posts] = useState<Post[]>(initialPosts);
 
-  // 🚫 No session → prompt login
+ 
   if (!session) {
-    return (
-      <div className="min-h-screen flex items-center justify-center text-gray-400">
-        <p>
-          Please{" "}
-          <Link href="/login" className="text-green-500 underline">
-            sign in
-          </Link>{" "}
-          to access blog.
-        </p>
-      </div>
-    );
+  router.push('/login')
   }
 
   // ✅ Logged in view
@@ -56,7 +48,7 @@ export default function HomePageClient({
     <div className="flex flex-col h-screen p-4">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-semibold">
-          Welcome, {session.user.name || "User"}
+          {/* Welcome, {session.user.name || "User"} */}
         </h2>
         <button
           onClick={handleSignOut}
